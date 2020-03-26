@@ -1,0 +1,119 @@
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+.hero {
+  background: royalblue;
+  color: #f8f8f8;
+  padding: 32px 16px;
+  display: grid;
+  grid-template-columns: minmax(auto, 1024px);
+  justify-content: center;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 70px 1fr 320px;
+  grid-template-areas:
+    "badge title form"
+    ". description form"
+    ". cauntdown form";
+  grid-gap: 10px;
+}
+
+.badge {
+  grid-area: badge;
+}
+
+.badge img {
+  max-width: 70px;
+}
+.hero img {
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.title {
+  grid-area: title;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  grid-area: form;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5em;
+  border-radius: 10px;
+}
+.form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dbdbe2;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form p {
+  font-size: 20px;
+  color: #3a3b3f;
+  margin-bottom: 1em;
+}
+
+.form button {
+  background: #98ca3f;
+  color: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  border-bottom: 5px solid #6d932b;
+  display: inline-block;
+}
+
+.cauntdown {
+  grid-area: cauntdown;
+}
+
+.cauntdown p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cauntdown span {
+  font-size: 33px;
+}
+
+.cauntdown span:after {
+  content: ":";
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.cauntdown span:last-child:after {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
+.description {
+  grid-area: description;
+}
+
+@media screen and (max-width: 768px) {
+  .hero__container {
+    grid-template-columns: 70px 1fr;
+    grid-template-areas:
+                        "badge title"
+                        "description description"
+                        "form form"
+                        "cauntdown cauntdown";
+  }
+}
